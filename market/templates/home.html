@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}
+    Welcome to Open Market
+{% endblock %}
+{% block content %}
+    <section>
+        <a href= "{{ url_for('market_page') }}"><img class="mySlides" src="https://storage-asset.msi.com/global/picture/image/feature/nb/GF/GF65/kvimg-gf65.jpg"
+        style="width:100%"></a>
+        <a href= "{{ url_for('market_page') }}"><img class="mySlides" src="https://www.apple.com/in/iphone/home/images/overview/hero/iphone_12__d51ddqcc7oqe_large.jpg"
+        style="width:100%"></a>
+        <a href= "{{ url_for('market_page') }}"><img class="mySlides" src="https://images.samsung.com/is/image/samsung/assets/in/home/8004_Neo-QLED-PFP-Page-Banners_1440x344.jpg?$ORIGIN_JPG$"
+        style="width:100%"></a>
+    </section>
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center " style="color:white;background-color:#AC3B61">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 font-weight-normal">The Open Market</h1>
+            <p class="lead font-weight-normal">Start purchasing products by clicking the link below</p>
+            <a class="btn btn-primary" href="{{ url_for('market_page') }}">Get Started</a>
+        </div>
+        <div class="product-device box-shadow d-none d-md-block"></div>
+        <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+    </div>
+    <section class="w3-container w3-center w3-content" style="max-width:600px;color:black;">
+        <h2 class="w3-wide">Open Market</h2>
+        <p class="w3-opacity"><i>We love Goods!</i></p>
+        <p class="w3-justify">This is an open market! yes you heard it right. We have developed this platform so that everyone can trade. We do all the government rules, any sort of dispute the state court of odessey will undertake it. We do not provide any sort of waranty for the products that are bought under this website and we are not resposible for any sort of loss of belongings</p>
+      </section>
+      <script>
+        var myIndex = 0;
+        carousel();
+        
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}
+          x[myIndex-1].style.display = "block";
+          setTimeout(carousel, 3000);
+        }
+        </script>
+
+{% endblock %}

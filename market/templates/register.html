@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}
+    Register Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-register" style="color:black">
+            {{ form.hidden_tag() }}
+            <br>
+            <img class="mb-4" src="https://www.flaticon.com/svg/vstatic/svg/4652/4652635.svg?token=exp=1620713837~hmac=41e15c306d2ee3f207cd91b7a06b3065" alt="" width="200" height="200">
+            <h1 class="h3 mb-3 font-weight-normal" style="color:black">
+                Please Create your Account
+            </h1>
+            <div class="col-md-4 col-lg-offset-4" style="margin: auto;color: black;">
+                {{ form.username.label() }}
+                    {{ form.username(class="form-control", placeholder="User Name") }}
+
+                    {{ form.email_address.label() }}
+                    {{ form.email_address(class="form-control", placeholder="Email Address") }}
+
+                    {{ form.password1.label() }}
+                    {{ form.password1(class="form-control", placeholder="Password") }}
+
+                    {{ form.password2.label() }}
+                    {{ form.password2(class="form-control", placeholder="Confirm Password") }}
+            </div>
+                    
+
+
+            <div class="checkbox mb-3" style="color: black">
+               <h6>Already have an account?</h6>
+               <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Login</a>
+            </div>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary",style="width: 400px;margin: auto") }}
+
+        </form>
+    </div>
+</body>
+{% endblock %}
